@@ -5,4 +5,8 @@ node {
 	stage('Test') {
 		echo "Test"
 	}
+
+	tage('IntegrationTest') {
+		echo "Test"
+	}
 }
