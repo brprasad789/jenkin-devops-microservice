@@ -60,7 +60,7 @@ pipeline {
 		stage ('Push Docker Image') {
 			steps {
 				script {
-					docker.withRegistry('', 'dockerhub') {
+					docker.withRegistry(' ', 'dockerhub') {
 						dockerImage.push();
 						dockerImage.push('latest');
 					}
@@ -68,7 +68,7 @@ pipeline {
 			}
 		}	
 	}
-	post {
+	post {	
 		always {
 			echo "Im awesome, I Run Always"
 		}
