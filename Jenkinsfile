@@ -61,8 +61,9 @@ pipeline {
 			steps {
 				script {
 					docker.withRegistry('', 'dockerhub') {
+						sh "docker login -u ${USERNAME} -p ${PASSWORD}"
 						dockerImage.push();
-						dockerImage.push('latest');
+						dockerImage.push("latest");
 					}
 				}
 			}
